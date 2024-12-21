@@ -1,0 +1,68 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #002b5c;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ffeb3b;
+  text-shadow: 2px 2px 5px #d84315;
+}
+
+main p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-top: 30px;
+  color: #81d4fa;
+}
+
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  animation: fall linear infinite, drift linear infinite;
+}
+
+.snowflake:nth-child(2) { font-size: 2rem; animation-duration: 6s; left: 25%; }
+.snowflake:nth-child(3) { font-size: 1.2rem; animation-duration: 8s; left: 75%; }
+.snowflake:nth-child(4) { font-size: 1.8rem; animation-duration: 5s; left: 10%; }
+.snowflake:nth-child(5) { font-size: 1.3rem; animation-duration: 7s; left: 90%; }
+
+@keyframes fall {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
